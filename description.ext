@@ -1,0 +1,66 @@
+class CfgFunctions {
+	#include "fncs\functions.hpp"
+};
+
+//Detalles de mision
+class Header
+{
+	gameType =  Coop;
+	minPlayers =  1;
+	maxPlayers = 60;
+};
+
+onLoadIntro = "Mensaje mientras se carga la intro de la mision";
+
+author			= "Autor";
+OnLoadName		= "Nombre de la mision";
+OnLoadMission	= "Mensaje mientras se carga la mision(No esmerarse ya que si se carga rapido, casi no se va a ver nada)";
+loadScreen		= "img\logo.jpg";
+
+briefingName = "Nombre que se ve en el briefing";
+
+//Respawn
+respawn = "BASE";
+respawnButton = 0;
+respawnDelay = 60;
+respawnOnStart = -1;
+respawnTemplates[] = { "Counter", "MenuPosition", "Tickets" };
+
+//Manejo de cuerpos y vehiculos destruidos
+corpseManagerMode = 3;
+corpseLimit = 15;
+corpseRemovalMinTime = 60;
+corpseRemovalMaxTime = 600;
+
+wreckManagerMode = 1;
+wreckLimit = 5;
+wreckRemovalMinTime = 300;
+wreckRemovalMaxTime = 1800;
+
+minPlayerDistance = 200;
+
+//IA
+disabledAI = 1;
+
+//Sonidos
+// aca se agregan los sonidos que quieran reproducir en la mision, es importante que esten en .ogg con la mayor compresion
+// y cuando cambian algo aca, tienen que guardar y volver a cargar la mision para que surta efecto
+class CfgSounds
+
+{
+	sounds[] = {};
+	class slaves//nombre del sonido
+	{
+		name = "slaves"; //poner el mismo por convencion
+		sound[] = { "sounds\slaves.ogg", 1, 1 }; //ruta del archivo, volumen y pitch
+		titles[] = {};
+	};
+	/* aca les dejo si quieren agregar mas de un sonido
+	class sonido2
+	{
+		name = "sonido2";
+		sound[] = { "sounds\nombreArchivo.ogg", 1 , 1 };
+		titles[] = {};
+	};
+	*/
+};
